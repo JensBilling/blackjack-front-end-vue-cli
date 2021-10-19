@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Blackjack logo" src="./assets/logo.png">
+    <GameField></GameField>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GameField from "./components/GameField";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    GameField
   }
 }
 </script>
 
 <style>
+body{
+  background: rgb(34 177 76);
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: rgb(255 201 14);
+  background: rgb(34 177 76);
+  margin-top: 10px;
+  border: solid black 1px;
 }
 </style>
