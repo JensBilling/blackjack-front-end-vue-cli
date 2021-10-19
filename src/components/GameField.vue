@@ -1,12 +1,12 @@
 <template>
   <div v-if="gamePhase == 'start'">
-    <div id="betAmount">Bet amount:</div>
-    <div id="bettingArea">
-      <button v-on:click="reduceBet" id="reduceBet">-</button>
-      <div id="betDisplay">{{ userBet }}</div>
-      <button v-on:click="increaseBet" id="increaseBet">+</button>
+    <div class="betAmount">Bet amount:</div>
+    <div class="bettingArea">
+      <button v-on:click="reduceBet" class="reduceBet">-</button>
+      <div class="betDisplay">{{ userBet }}</div>
+      <button v-on:click="increaseBet" class="increaseBet">+</button>
     </div>
-    <button v-on:click="startGame" id="startGameButton">Start game</button>
+    <button v-on:click="startGame" class="startGameButton">Start game</button>
   </div>
 
   <div v-else-if="gamePhase == 'hit'">
@@ -30,7 +30,17 @@
 
       <div class="playerCards">{{ playerCards }}</div>
       <div class="playerCardValue">Player value: {{ playerValue }}</div>
-      You win
+      Player wins!
+
+      <h2>Play again?</h2>
+      <div class="betAmount">Bet amount:</div>
+      <div class="bettingArea">
+        <button v-on:click="reduceBet" class="reduceBet">-</button>
+        <div class="betDisplay">{{ userBet }}</div>
+        <button v-on:click="increaseBet" class="increaseBet">+</button>
+      </div>
+      <button v-on:click="startGame" class="startGameButton">Start game</button>
+
     </div>
 
     <div v-else-if="winner == 'House'">
@@ -40,7 +50,17 @@
 
       <div class="playerCards">{{ playerCards }}</div>
       <div class="playerCardValue">Player value: {{ playerValue }}</div>
-      House win
+      House wins!
+
+      <h2>Play again?</h2>
+      <div class="betAmount">Bet amount:</div>
+      <div class="bettingArea">
+        <button v-on:click="reduceBet" class="reduceBet">-</button>
+        <div class="betDisplay">{{ userBet }}</div>
+        <button v-on:click="increaseBet" class="increaseBet">+</button>
+      </div>
+      <button v-on:click="startGame" class="startGameButton">Start game</button>
+
     </div>
 
     <div v-else-if="winner == 'Push'">
@@ -51,6 +71,16 @@
       <div class="playerCards">{{ playerCards }}</div>
       <div class="playerCardValue">Player value: {{ playerValue }}</div>
       Push! It's a tie!
+
+      <h2>Play again?</h2>
+      <div class="betAmount">Bet amount:</div>
+      <div class="bettingArea">
+        <button v-on:click="reduceBet" class="reduceBet">-</button>
+        <div class="betDisplay">{{ userBet }}</div>
+        <button v-on:click="increaseBet" class="increaseBet">+</button>
+      </div>
+      <button v-on:click="startGame" class="startGameButton">Start game</button>
+
     </div>
   </div>
 </template>
@@ -165,13 +195,13 @@ export default {
 }
 </script>
 <style scoped>
-#betDisplay, #increaseBet, #reduceBet {
+.betDisplay, .increaseBet, .reduceBet {
   display: inline;
   margin-left: 3px;
   margin-right: 3px;
 }
 
-#startGameButton {
+.startGameButton {
   margin: 10px
 }
 

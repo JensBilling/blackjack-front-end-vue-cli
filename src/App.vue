@@ -28,6 +28,6 @@ body{
   color: rgb(255 201 14);
   background: rgb(34 177 76);
   margin-top: 10px;
-  border: solid black 1px;
+
 }
 </style>
